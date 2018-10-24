@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.example.amir.testingfirebase.chatModules.contacts.ContactsModel"/>
+
+        <variable
+            name="viewModel"
+            type="com.example.amir.testingfirebase.chatModules.contacts.ContactsViewModel"/>
+
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/invite"
+        android:layout_width="match_parent"
+        android:background="#d2d1d1"
+        android:layout_marginTop="5dp"
+        android:layout_height="60dp">
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@{data.name}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_invite"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="#ffffff"
+            android:background="#ff09e6"
+            android:text="Invite"
+            android:onClick='@{()->viewModel.inviteForRingChat(data)}'
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/background"
+            app:layout_constraintTop_toBottomOf="parent"/>
+    </android.support.constraint.ConstraintLayout>
+
+
+</layout>
